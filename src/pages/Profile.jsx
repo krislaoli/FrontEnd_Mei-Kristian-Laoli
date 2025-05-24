@@ -1,8 +1,17 @@
-import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Profile = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const token = location.state?.token;
+
+  // Redirect ke /login jika token tidak ada
+  useEffect(() => {
+    if (!token) {
+      navigate("/login");
+    }
+  }, [token, navigate]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-yellow-100 via-white to-yellow-200 px-4">
@@ -16,7 +25,7 @@ const Profile = () => {
           {/* Title */}
           <h2 className="text-3xl font-bold text-gray-800">Welcome, Alba!</h2>
           <p className="text-sm text-gray-500">
-            You're successfully logged in ✨
+            You're successfully logged in
           </p>
 
           {/* Token Display */}
@@ -25,7 +34,7 @@ const Profile = () => {
               Your Auth Token:
             </p>
             <div className="bg-gray-100 text-xs break-all text-blue-700 font-mono p-3 rounded border border-gray-200">
-              {token || "Token tidak ditemukan"}
+              {token}
             </div>
           </div>
         </div>
