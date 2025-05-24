@@ -28,6 +28,9 @@ const Login = () => {
       );
 
       const token = res.data.token;
+
+      localStorage.setItem("jwtToken", token)
+
       console.log("Login berhasil. Token:", token); // ✅ log token
       navigate("/profile", { state: { token } });
     } catch (err) {

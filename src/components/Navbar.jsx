@@ -21,32 +21,27 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-yellow-400 text-3xl font-bold lowercase tracking-widest">
-          alba
-        </div>
+        <Link to="/">
+          <img src="/Logo.png" alt="Albatech Logo" className="h-10" />
+        </Link>
 
-        {/* Menu */}
+        {/* Navigation Menu */}
         <nav className="flex items-center gap-8">
           <ul className="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-900">
             <li>
-              <a href="#" className="hover:text-yellow-400 transition">
-                About
-              </a>
+              <a href="#service" className="hover:text-yellow-400 transition">Service</a>
             </li>
             <li>
-              <a href="#" className="hover:text-yellow-400 transition">
-                Service
-              </a>
+              <a href="#about" className="hover:text-yellow-400 transition">About</a>
             </li>
             <li>
-              <a href="#" className="hover:text-yellow-400 transition">
-                Portfolio
-              </a>
+              <a href="#portfolio" className="hover:text-yellow-400 transition">Portfolio</a>
             </li>
             <li>
-              <a href="#" className="hover:text-yellow-400 transition">
-                Career
-              </a>
+              <a href="#blog" className="hover:text-yellow-400 transition">Blog</a>
+            </li>
+            <li>
+              <a href="#career" className="hover:text-yellow-400 transition">Career</a>
             </li>
           </ul>
 
@@ -59,7 +54,7 @@ const Navbar = () => {
               Login
             </Link>
             <a
-              href="#"
+              href="#contact"
               className="bg-yellow-400 text-black font-semibold text-sm px-6 py-2 rounded-full hover:bg-yellow-500 transition"
             >
               Contact Us

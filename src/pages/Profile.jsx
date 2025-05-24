@@ -37,6 +37,14 @@ const Profile = () => {
               {token}
             </div>
           </div>
+
+          {/* Tombol Close untuk ke Home */}
+          <button
+            onClick={() => navigate("/")}
+            className="mt-6 px-4 py-2 bg-yellow-400 text-white rounded-md hover:bg-yellow-500 transition"
+          >
+            Close
+          </button>
         </div>
       </div>
     </div>
