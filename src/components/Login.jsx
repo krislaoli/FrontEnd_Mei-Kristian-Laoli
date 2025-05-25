@@ -31,10 +31,10 @@ const Login = () => {
 
       localStorage.setItem("jwtToken", token)
 
-      console.log("Login berhasil. Token:", token); // ✅ log token
+      console.log("Login berhasil. Token:", token); //log token
       navigate("/profile", { state: { token } });
     } catch (err) {
-      console.error("Login error:", err); // ✅ log error
+      console.error("Login error:", err); //log error
       setError("Login gagal. Periksa kembali email dan password.");
     }
   };
