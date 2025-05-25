@@ -163,6 +163,7 @@ function Home() {
             takes our clients to the next level
           </h2>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
@@ -170,6 +171,7 @@ function Home() {
               category: "Mobile apps",
               description:
                 "Has a unique selling point where not all companies offer applications for sales, data collection and management.",
+              image: "/assets/proyek/proyek2.webp", // Ganti dengan path gambarmu
               highlight: true,
             },
             {
@@ -177,25 +179,34 @@ function Home() {
               category: "Website development",
               description:
                 "Albatech helps in creating a website catalog to show brand identity and information in accordance with vision and mission of Home and Living.",
+              image: "/assets/proyek/proyek3.webp", // Ganti dengan path gambarmu
             },
             {
               title: "HIPPO",
               category: "Website development",
               description:
                 "Albatech help to create e-commerce and company profile for Hippo’s Website with realtime transaction and integration with Payment Gateway to accept multi payment.",
+              image: "/assets/proyek/proyek4.webp", // Ganti dengan path gambarmu
             },
           ].map((project, index) => (
             <div
               key={index}
-              className={`bg-white rounded-xl p-6 shadow hover:shadow-lg transition ${
+              className={`bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition ${
                 project.highlight ? "border border-yellow-400" : ""
               }`}
             >
-              <p className="text-sm text-gray-400">{project.category}</p>
-              <h3 className="text-lg font-semibold text-yellow-500 mt-2 mb-2">
-                {project.title}
-              </h3>
-              <p className="text-sm text-gray-700">{project.description}</p>
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <p className="text-sm text-gray-400">{project.category}</p>
+                <h3 className="text-lg font-semibold text-yellow-500 mt-2 mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-sm text-gray-700">{project.description}</p>
+              </div>
             </div>
           ))}
         </div>
